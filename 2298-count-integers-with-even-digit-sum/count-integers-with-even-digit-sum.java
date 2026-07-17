@@ -1,19 +1,21 @@
 class Solution {
     public int countEven(int num) {
-        int sum = digitSum(num);
-        if (sum % 2 == 0) {
-            return num / 2;
-        } else {
-            return (num - 1) / 2;
-        }
-    }
-
-    private int digitSum(int n) {
-        int sum = 0;
-        while (n > 0) {
-            sum += n % 10;
-            n /= 10;
-        }
-        return sum;
+        int count = 0;
+        int i=1;
+            while(i<=num){
+                int temp =i;
+                int sum =0;
+                while(temp > 0){
+                    int d = temp % 10;
+                    sum += d;
+                    temp/=10;
+                }
+                if(sum % 2 == 0){
+                    count++;
+                }
+                i++;
+            }
+        
+        return count;
     }
 }
